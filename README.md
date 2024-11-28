@@ -7,5 +7,6 @@ Este proyecto implementa un sistema de visión artificial de última generación
 - 🦫 Paca de Tierras Bajas
 - 🐀 Roedores
 - 🦃 Tinamú Grande
+
 El sistema alcanza un F1-score ponderado de 0.951, demostrando su efectividad para el monitoreo automatizado de biodiversidad. Esta herramienta representa un avance significativo en la conservación de especies, permitiendo a investigadores y conservacionistas procesar grandes volúmenes de datos de manera eficiente y precisa.
 Desarrollado como parte de una iniciativa para modernizar las prácticas de conservación en el Chocó ecuatoriano, este proyecto establece un precedente para la implementación de tecnologías de inteligencia artificial en la protección de ecosistemas críticos.
