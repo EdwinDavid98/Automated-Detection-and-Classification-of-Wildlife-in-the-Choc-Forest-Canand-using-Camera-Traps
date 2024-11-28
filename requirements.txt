@@ -1,0 +1,12 @@
+torch>=2.3.0
+torchvision>=0.18.0
+pytorch-lightning>=2.4.0
+ultralytics>=8.2.81
+opencv-python>=4.8.0
+pandas>=2.0.3
+numpy>=1.25.2
+Pillow>=9.4.0
+scikit-learn>=1.2.2
+matplotlib>=3.7.1
+seaborn>=0.13.1
+torchmetrics>=1.4.1
