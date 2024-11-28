@@ -1,5 +1,11 @@
-# Sistema Automatizado de Detección y Clasificación de Fauna en el Bosque del Chocó(Canandé)
-In this repository you will find in detail how to run the algorithms for the automated detection and classification of wildlife in the Chocó forest (Canandé) using camera traps.
+# Sistema de Monitoreo Automático de Fauna Silvestre en el Bosque del Chocó 🦁 🌳
 ## Descripción
-El monitoreo manual de fauna silvestre mediante cámaras trampa representa un desafío significativo por el volumen de datos y el tiempo requerido para su análisis, particularmente en regiones megadiversas como el bosque del Chocó. Para abordar esta problemática, se presenta un sistema automatizado basado en aprendizaje profundo para la detección y clasificación de seis especies objetivo (\textit{Agutí Centroamericano}, \textit{Ardillas}, \textit{Armadillo de Nueve Bandas}, \textit{Paca de Tierras Bajas}, \textit{Roedores} y \textit{Tinamú Grande})  en la Reserva Jocotoco Canandé del bosque del Chocó en Ecuador. El sistema incorpora un enfoque de dos etapas: detección de objetos utilizando YOLO para identificar la presencia de animales en videos de cámaras trampa (con umbral de confianza >55\% para la extracción inicial de frames), seguido de la clasificación de especies utilizando arquitecturas ResNet50 y MobileNetV3.
-Los resultados demuestran que ResNet50 alcanza un rendimiento superior con un F1-score ponderado de 0.951 al ser entrenado con frames que superan un umbral de confianza del 60\%, mientras que MobileNetV3 alcanza un F1-score de 0.946. El análisis comparativo de ambas arquitecturas sugiere diferentes escenarios de aplicación: ResNet50 destaca en aplicaciones que requieren máxima precisión en la clasificación, mientras que MobileNetV3 se presenta como una alternativa eficiente para implementaciones con recursos computacionales limitados, manteniendo un rendimiento competitivo.
+Este proyecto implementa un sistema de visión artificial de última generación para la detección y clasificación automática de especies en la Reserva Jocotoco Canandé, una de las regiones más biodiversas del planeta. Utilizando una arquitectura dual que combina modelos YOLO para detección y redes neuronales profundas (ResNet50 y MobileNetV3) para clasificación, el sistema procesa videos de cámaras trampa para identificar y monitorear seis especies nativas:
+- 🦊 Agutí Centroamericano
+- 🐿️ Ardillas
+- 🦡 Armadillo de Nueve Bandas
+- 🦫 Paca de Tierras Bajas
+- 🐀 Roedores
+- 🦃 Tinamú Grande
+El sistema alcanza un F1-score ponderado de 0.951, demostrando su efectividad para el monitoreo automatizado de biodiversidad. Esta herramienta representa un avance significativo en la conservación de especies, permitiendo a investigadores y conservacionistas procesar grandes volúmenes de datos de manera eficiente y precisa.
+Desarrollado como parte de una iniciativa para modernizar las prácticas de conservación en el Chocó ecuatoriano, este proyecto establece un precedente para la implementación de tecnologías de inteligencia artificial en la protección de ecosistemas críticos.
