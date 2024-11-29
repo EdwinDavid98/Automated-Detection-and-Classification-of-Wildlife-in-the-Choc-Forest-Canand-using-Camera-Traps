@@ -105,6 +105,38 @@ mobilenet_config = {
 The dataset consists of 780 camera trap videos (130 for each of the six target species) captured in the Jocotoco Canandé Reserve. The data were divided into three sets: 70% for training, 15% for validation, and 15% for testing. Processing using YOLO detectors resulted in approximately 33,000 relevant frames, providing a solid basis for training and evaluating the classification models.
 
 ## 📁 Project Structure
+```
+wildlife-monitoring/
+├── Analysis_dataset/          # Data Analysis & Visualization
+│   ├── species_analysis/     # Individual species frame distributions
+│   └── dataset_metrics/      # Dataset statistics and insights
+│
+├── Dataset_frames/           # Processed Detection Frames
+│   ├── by_species/          # Organized by animal category
+│   └── metadata/            # Frame annotations and statistics
+│
+├── YOLO_detection/          # Object Detection Pipeline
+│   ├── models/             # YOLO configurations
+│   └── utils/              # Detection utilities
+│
+├── Models/                  # Classification Models & Experiments
+│   ├── mobilenetv3/        # MobileNetV3 implementations
+│   │   ├── conf60/        # 60% confidence threshold
+│   │   └── conf70/        # 70% confidence threshold
+│   │
+│   └── resnet50/          # ResNet50 implementations
+│       ├── conf60/        # 60% confidence threshold
+│       └── conf70/        # 70% confidence threshold
+│
+└── requirements.txt        # Environment dependencies
+```
+### Key Components:
+- **Analysis Tools**: Comprehensive notebooks for dataset exploration and result visualization
+- **Detection Pipeline**: YOLO-based frame extraction and animal detection
+- **Classification Models**: PyTorch Lightning implementations with configurable confidence thresholds
+- **Dataset Management**: Organized frame storage with metadata tracking
+
+**Note**: Raw video data and extracted frames are stored in a secure private container to maintain data integrity and privacy.
 
 ## 📋Requirements
 - torch>=2.3.0
