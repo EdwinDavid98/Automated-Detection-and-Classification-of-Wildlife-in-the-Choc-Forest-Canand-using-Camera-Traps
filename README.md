@@ -1,17 +1,20 @@
 <div align="center">
- <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:2E8B57,100:228B22&height=200&section=header&text=Wildlife%20Monitoring%20System&fontSize=60&fontColor=FFFFFF&animation=fadeIn"/>
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:2E8B57,100:228B22&height=200&section=header&text=Wildlife%20Monitoring%20System&fontSize=60&fontColor=FFFFFF&animation=fadeIn"/>
+  
+  <h2>Automated Detection and Classification of Wildlife in the Chocó Forest (Canandé) using Camera Traps 🦁 🌳</h2>
+  <p>A computer vision system for automated species detection and classification</p>
 
-
- <h2>Automated Detection and Classification of Wildlife in the Chocó Forest (Canandé) using Camera Traps🦁 🌳</h2>
- <p>A computer vision system for automated species detection and classification</p>
-
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.3.0-red.svg)](https://pytorch.org)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue.svg)](https://www.linkedin.com/in/edwin-montenegro-119570250/)
-
+  <p>
+    <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python">
+    <img src="https://img.shields.io/badge/PyTorch-2.3.0-red.svg" alt="PyTorch">
+    <a href="https://www.linkedin.com/in/edwin-montenegro-119570250/">
+      <img src="https://img.shields.io/badge/LinkedIn-Profile-blue.svg" alt="LinkedIn">
+    </a>
+  </p>
 </div>
 
 ## Description
+
 This project implements a state-of-the-art machine vision system for automatic species detection and classification in the Jocotoco Canandé Reserve, one of the most biodiverse regions on the planet. Using a dual architecture that combines YOLO models for detection and deep neural networks (ResNet50 and MobileNetV3) for classification, the system processes camera trap videos to identify and monitor six native species.
 
 - 🦊 Central American Agouti
@@ -166,17 +169,17 @@ pip install -r requirements.txt
 ### Frame Detection Setup
 The first step is to process the videos using the YOLO detector to extract relevant frames:
 ```
-# Configuración del detector YOLO
+# YOLO Detector Setup
 from ultralytics import YOLO
 
-# Cargar el modelo
+# Load the model
 model = YOLO('yolov8x.pt')  # o 'yolov5l.pt'
 
-# Configurar parámetros
+# Configure parameters
 conf_threshold = 0.55  # Umbral de confianza >55%
 max_frames = 350      # Frames máximos por video
 
-# Ejecutar detección
+# Run detection
 results = model(video_path, conf=conf_threshold)
 ```
 This process will generate a dataset of frames with their respective bounding boxes for each detected species.
@@ -184,10 +187,10 @@ This process will generate a dataset of frames with their respective bounding bo
 ###  Classification of Species
 Once the frames have been obtained, the classifier is trained:
 ```
-# Configuración del modelo de clasificación
+# Setting up the classification model
 from pytorch_lightning import Trainer
 
-# Definir hiperparámetros
+# Define hyperparameters
 hyperparameters = {
     'learning_rate': 0.0001,
     'batch_size': 32,
@@ -195,7 +198,7 @@ hyperparameters = {
     'early_stopping': 10
 }
 
-# Iniciar entrenamiento con monitoreo
+# Start training with monitoring
 trainer = Trainer(
     max_epochs=hyperparameters['max_epochs'],
     accelerator='gpu',
