@@ -12,7 +12,7 @@
 </div>
 
 ## Description
-This project introduces a state-of-the-art computer vision system for automated species detection and classification at the Jocotoco Canandé Reserve, one of the planet's most biodiverse regions. The system employs a dual architecture combining YOLO models for detection with deep neural networks (ResNet50 and MobileNetV3) for classification, processing camera trap videos to identify and monitor six native species:
+This project implements a state-of-the-art machine vision system for automatic species detection and classification in the Jocotoco Canandé Reserve, one of the most biodiverse regions on the planet. Using a dual architecture that combines YOLO models for detection and deep neural networks (ResNet50 and MobileNetV3) for classification, the system processes camera trap videos to identify and monitor six native species.
 
 - 🦊 Central American Agouti
 - 🐿️ Squirrels
@@ -21,8 +21,7 @@ This project introduces a state-of-the-art computer vision system for automated 
 - 🐀 Rodents
 - 🦃 Great Tinamou
 
-Achieving a weighted F1-score of 0.951, the system demonstrates exceptional effectiveness in automated biodiversity monitoring. This tool represents a significant advancement in species conservation, enabling researchers and conservationists to process large volumes of data efficiently and accurately.
-Developed as part of an initiative to modernize conservation practices in the Ecuadorian Chocó, this project sets a precedent for implementing artificial intelligence technologies in the protection of critical ecosystems.
+The results show that ResNet50 achieves superior performance with a weighted F1-score of 0.951 when trained with frames that exceed a 60% confidence threshold, demonstrating its effectiveness for automated biodiversity monitoring. This tool represents a significant advance in species conservation, allowing researchers and conservationists to process large volumes of data efficiently and accurately. Developed as part of an initiative to modernize conservation practices in the Ecuadorian Chocó, this project sets a precedent for the implementation of artificial intelligence technologies in the protection of critical ecosystems..
 
 ## 🔄 System Pipeline
 
