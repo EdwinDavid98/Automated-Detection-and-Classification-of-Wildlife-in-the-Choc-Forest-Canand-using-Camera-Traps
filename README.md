@@ -104,6 +104,8 @@ mobilenet_config = {
 ## 📊 Dataset
 The dataset consists of 780 camera trap videos (130 for each of the six target species) captured in the Jocotoco Canandé Reserve. The data were divided into three sets: 70% for training, 15% for validation, and 15% for testing. Processing using YOLO detectors resulted in approximately 33,000 relevant frames, providing a solid basis for training and evaluating the classification models.
 
+## 📁 Project Structure
+
 ## 📋Requirements
 - torch>=2.3.0
 - torchvision>=0.18.0
