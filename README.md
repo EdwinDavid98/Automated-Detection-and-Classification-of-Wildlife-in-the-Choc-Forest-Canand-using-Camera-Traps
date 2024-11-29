@@ -136,3 +136,91 @@ Acceder a http://localhost:6006 para visualizar:
 - Visualizaciones de matrices de confusión
 - Curvas ROC para evaluación de rendimiento
 ## 📊 Resultados
+### Rendimiento de sistema de detección
+El sistema de detección implementa un enfoque dual utilizando dos arquitecturas YOLO. El detector principal, YOLOv5l, configurado con un umbral de confianza superior al 55%, procesó eficientemente los videos en condiciones diurnas, logrando extraer aproximadamente 33,000 frames relevantes de un total de 780 videos. Complementariamente, YOLOv8x se implementó específicamente para el procesamiento de videos del Armadillo de Nueve Bandas y Roedores, demostrando una capacidad superior en la detección bajo condiciones nocturnas y en situaciones donde las especies presentaban patrones de camuflaje complejos.
+
+### Comparación Detallada de Modelo MobilenetV3 por Clase
+| Modelo | Conf. | Clase | Precision | Recall | F1-score | Support |
+|--------|--------|--------|------------|---------|-----------|----------|
+| MobileNetV3 | 60% | 0 | 0.991 | 0.955 | 0.973 | 2012.0 |
+|  |  | 1 | 0.550 | 0.750 | 0.635 | 44.0 |
+|  |  | 2 | 0.964 | 0.930 | 0.947 | 316.0 |
+|  |  | 3 | 0.516 | 0.926 | 0.663 | 121.0 |
+|  |  | 4 | 0.912 | 0.989 | 0.949 | 378.0 |
+|  |  | 5 | 0.958 | 0.926 | 0.942 | 1834.0 |
+|  |  | accuracy | - | - | 0.942 | 4705.0 |
+|  |  | macro avg | 0.815 | 0.913 | 0.851 | 4705.0 |
+|  |  | weighted avg | 0.954 | 0.942 | 0.946 | 4705.0 |
+| MobileNetV3 | 70% | 0 | 0.989 | 0.964 | 0.984 | 1555.0 |
+|  |  | 1 | 0.759 | 1.000 | 0.863 | 22.0 |
+|  |  | 2 | 0.875 | 0.980 | 0.925 | 100.0 |
+|  |  | 3 | 0.484 | 0.859 | 0.619 | 71.0 |
+|  |  | 4 | 0.700 | 0.988 | 0.954 | 166.0 |
+|  |  | 5 | 0.938 | 0.938 | 0.956 | 1459.0 |
+|  |  | accuracy | - | - | 0.940 | 3373.0 |
+|  |  | macro avg | 0.791 | 0.816 | 0.751 | 3373.0 |
+|  |  | weighted avg | 0.937 | 0.940 | 0.925 | 3373.0 |
+
+### Comparación Detallada de Modelo Resnet50 por Clase
+| Modelo | Conf. | Clase | Precision | Recall | F1-score | Support |
+|--------|--------|--------|------------|---------|-----------|----------|
+| ResNet50 | 60% | 0 | 0.989 | 0.990 | 0.989 | 2012.0 |
+|  |  | 1 | 0.667 | 0.818 | 0.735 | 44.0 |
+|  |  | 2 | 0.695 | 0.975 | 0.812 | 316.0 |
+|  |  | 3 | 0.929 | 0.860 | 0.893 | 121.0 |
+|  |  | 4 | 0.899 | 0.704 | 0.789 | 378.0 |
+|  |  | 5 | 0.989 | 0.963 | 0.976 | 1834.0 |
+|  |  | accuracy | - | - | 0.950 | 4705.0 |
+|  |  | macro avg | 0.861 | 0.885 | 0.866 | 4705.0 |
+|  |  | weighted avg | 0.957 | 0.950 | 0.951 | 4705.0 |
+| ResNet50 | 70% | 0 | 0.988 | 0.976 | 0.982 | 1555.0 |
+|  |  | 1 | 0.647 | 1.000 | 0.786 | 22.0 |
+|  |  | 2 | 0.375 | 0.980 | 0.543 | 100.0 |
+|  |  | 3 | 0.438 | 0.789 | 0.563 | 71.0 |
+|  |  | 4 | 0.636 | 0.042 | 0.079 | 166.0 |
+|  |  | 5 | 0.975 | 0.938 | 0.956 | 1459.0 |
+|  |  | accuracy | - | - | 0.910 | 3373.0 |
+|  |  | macro avg | 0.677 | 0.787 | 0.651 | 3373.0 |
+|  |  | weighted avg | 0.923 | 0.910 | 0.903 | 3373.0 |
+### Curva de aprendizaje de los modelos Resnet50 y MovileNetv3
+<div align="center">
+<table>
+ <tr>
+   <td><img src="https://github.com/user-attachments/assets/bd31838d-d0e4-4523-8dd8-482b94b9ff59" width="400px"><br>A) Curva aprendizaje Resnet 50 confiabilidad 60%</td>
+   <td><img src="https://github.com/user-attachments/assets/94a53e3b-2793-4bc9-bd28-1a11f92e6c98" width="400px"><br>B) Curva aprendizaje Resnet 50 confiabilidad 70%</td>
+ </tr>
+ <tr>
+   <td><img src="https://github.com/user-attachments/assets/dac0443d-19fc-4079-86b0-a597f37af8bf" width="400px"><br>C) Curva aprendizaje Mobilenetv3 confiabilidad 60%</td>
+   <td><img src="https://github.com/user-attachments/assets/b37f6609-124e-4258-934b-f19237aedf24" width="400px"><br>D) Curva aprendizaje Mobilenetv3 confiabilidad 70%</td>
+ </tr>
+</table>
+</div>
+
+### Curva ROC de los modelos Resnet50 y MovileNetv3
+<div align="center">
+<table>
+ <tr>
+   <td><img src="https://github.com/user-attachments/assets/e12a027b-8544-4287-8c83-8e84681938ae" width="400px"><br>A) Curva ROC Mobilenetv3 confiabilidad 60%</td>
+   <td><img src="https://github.com/user-attachments/assets/7568c3e4-29de-48e3-a9ee-61c922051e5f" width="400px"><br>B) Curva ROC Mobilenetv3 confiabilidad 70%</td>
+ </tr>
+ <tr>
+   <td><img src="https://github.com/user-attachments/assets/27a7e65f-9a5c-47a6-8e3c-e59c3bd82c79" width="400px"><br>C) Curva ROC  Resnet 50 confiabilidad 60%</td>
+   <td><img src="https://github.com/user-attachments/assets/6dbc2872-178a-48a5-9835-142f90a19ed3" width="400px"><br>D) Curva ROC Resnet 50 confiabilidad 70%</td>
+ </tr>
+</table>
+</div>
+
+### Matriz de confución de los modelos Resnet50 y MovileNetv3
+
+<div align="center">
+<table>
+ <tr>
+   <td><img src="https://github.com/user-attachments/assets/10ff6104-ff65-4c00-be94-e20be9756cc0" width="400px"><br>A) Matriz de confución Mobilenetv3 confiabilidad 60%</td>
+   <td><img src="https://github.com/user-attachments/assets/9d241a97-7ee6-4bb7-abcd-8398cbc661a3" width="400px"><br>B) Matriz de confución Mobilenetv3 confiabilidad 70%</td>
+ </tr>
+ <tr>
+   <td><img src="https://github.com/user-attachments/assets/9378dd41-2f2c-4b9e-9453-2f2ec3a1b7a3" width="400px"><br>C) Matriz de confución Resnet 50 confiabilidad 60%</td>
+   <td><img src="https://github.com/user-attachments/assets/074250a1-7e3d-45e9-9fe2-72a4ece27a57" width="400px"><br>D) Matriz de confución Resnet 50 confiabilidad 70%</td>
+ </tr>
+</table>
+</div>
