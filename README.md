@@ -77,6 +77,23 @@ Enhancement Techniques:
    * Adaptive class weights
    * Balanced sampling
    * Loss function modification
+```python
+# ResNet50 Configuration
+resnet_config = {
+   'architecture': 'ResNet50',
+   'weights': 'imagenet',
+   'features': 'full extraction',
+   'optimization': 'maximum precision'
+}
+
+# MobileNetV3 Configuration
+mobilenet_config = {
+   'architecture': 'MobileNetV3',
+   'design': 'lightweight',
+   'target': 'real-time inference',
+   'efficiency': 'computationally optimized'
+}
+```
 <p align="center">
   <img src="https://github.com/user-attachments/assets/11e59021-bb86-4e25-a773-b526bc11915d" alt="System Architecture Diagram">
   <br>
@@ -101,7 +118,7 @@ The dataset consists of 780 camera trap videos (130 for each of the six target s
 - seaborn>=0.13.1
 - torchmetrics>=1.4.1
   
-## ⚙️ Installation & Setup
+## ⚙️ Installation  & Usage Guide
 
 ```
 # Clone repository
@@ -117,8 +134,8 @@ pip install -r requirements.txt
 ```
   
 
-### 2. Detección de Frames en Videos
-El primer paso consiste en procesar los videos mediante el detector YOLO para extraer frames relevantes:
+### Frame Detection Setup
+The first step is to process the videos using the YOLO detector to extract relevant frames:
 ```
 # Configuración del detector YOLO
 from ultralytics import YOLO
@@ -133,9 +150,10 @@ max_frames = 350      # Frames máximos por video
 # Ejecutar detección
 results = model(video_path, conf=conf_threshold)
 ```
-Este proceso generará un dataset de frames con sus respectivos bounding boxes para cada especie detectada.
-### 3. Clasificación de Especies
-Una vez obtenidos los frames, se procede con el entrenamiento del clasificador:
+This process will generate a dataset of frames with their respective bounding boxes for each detected species.
+
+###  Classification of Species
+Once the frames have been obtained, the classifier is trained:
 ```
 # Configuración del modelo de clasificación
 from pytorch_lightning import Trainer
@@ -156,15 +174,15 @@ trainer = Trainer(
     callbacks=[EarlyStopping(monitor='val_loss', patience=10)]
 )
 ```
-### 4. Monitoreo y Evaluación
-Los resultados del entrenamiento pueden visualizarse en tiempo real mediante TensorBoard:
+### Monitoring and Evaluation
+Training results can be visualized in real time using TensorBoard:
 ```
 tensorboard --logdir=logs/
 ```
-En la interfaz de TensorBoard podrá monitorear:
-Acceder a http://localhost:6006 para visualizar:
+In the TensorBoard interface you can monitor:
+Access http://localhost:6006 to view:
 
-- Evolución del entrenamiento
-- Métricas de rendimiento por especie
-- Visualizaciones de matrices de confusión
-- Curvas ROC para evaluación de rendimiento
+- Training progress
+- Performance metrics by species
+- Visualizations of confusion matrices
+- ROC curves for performance evaluation
