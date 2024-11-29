@@ -30,8 +30,8 @@ Our two-stage pipeline automates the processing of camera trap videos for wildli
 ### 📸 Stage 1: Detection Pipeline
 ```mermaid
 graph LR
-   A[Raw Videos] --> B[Frame Extraction]
-   B --> C[YOLO Detection]
+   A[Raw Videos] --> B[YOLO Detection]
+   B --> C[Frame Extraction]
    C --> D[Bounding Box Generation]
 ```
 Implementation Details:
@@ -62,7 +62,6 @@ Model Architecture:
    * Designed for computational efficiency
    * Lightweight architecture
    * Suitable for real-time applications
-Enhancement Techniques:
 * Transfer Learning
    * ImageNet pre-trained weights
    * Adaptive layer freezing
@@ -74,7 +73,6 @@ Enhancement Techniques:
    * ColorJitter: Lighting adaptation
 * Class Imbalance Handling
    * Adaptive class weights
-   * Balanced sampling
    * Loss function modification
 ```python
 # ResNet50 Configuration
@@ -106,17 +104,15 @@ The dataset consists of 780 camera trap videos (130 for each of the six target s
 ## 📁 Project Structure
 ```
 wildlife-monitoring/
-├── Analysis_dataset/          # Data Analysis & Visualization
-│   ├── species_analysis/     # Individual species frame distributions
-│   └── dataset_metrics/      # Dataset statistics and insights
+├── Analysis_dataset/                 # Data Analysis & Visualization
+│   └── Category analysis.ipynb/      # Dataset statistics and insights
 │
 ├── Dataset_frames/           # Processed Detection Frames
 │   ├── by_species/          # Organized by animal category
 │   └── metadata/            # Frame annotations and statistics
 │
-├── YOLO_detection/          # Object Detection Pipeline
-│   ├── models/             # YOLO configurations
-│   └── utils/              # Detection utilities
+├── YOLO_detection/       # Object Detection Pipeline
+│   └── models/           # Detection utilities
 │
 ├── Models/                  # Classification Models & Experiments
 │   ├── mobilenetv3/        # MobileNetV3 implementations
