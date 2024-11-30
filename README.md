@@ -7,6 +7,9 @@
   <p>
     <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python">
     <img src="https://img.shields.io/badge/PyTorch-2.3.0-red.svg" alt="PyTorch">
+    <a href="https://www.jocotoco.org.ec/web2#/EN/home2">
+      <img src="https://img.shields.io/badge/Jocotoco Foundation-Website-green.svg" alt="Jocotoco Foundation">
+    </a>
     <a href="https://www.linkedin.com/in/edwin-montenegro-119570250/">
       <img src="https://img.shields.io/badge/LinkedIn-Profile-blue.svg" alt="LinkedIn">
     </a>
@@ -183,6 +186,32 @@ max_frames = 350      # Frames máximos por video
 results = model(video_path, conf=conf_threshold)
 ```
 This process will generate a dataset of frames with their respective bounding boxes for each detected species.
+The extraction results will look like this:
+
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="https://github.com/user-attachments/assets/0150a764-1454-4f10-bda1-78a28affdf81" alt="Image 1"></td>
+      <td><img src="https://github.com/user-attachments/assets/e6078b4e-af13-4b17-8013-55d55651d959" alt="Image 2"></td>
+      <td><img src="https://github.com/user-attachments/assets/38a43e9c-6309-4f56-b8a3-65e2f36e7fec" alt="Image 3"></td>
+    </tr>
+    <tr>
+      <td><p>Clase 0:Central American Agouti</p></td>
+      <td><p>Clase 1:Squirrels</p></td>
+      <td><p>Clase 2:Nine-banded Armadillo</p></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/user-attachments/assets/8077446d-8681-41ec-b2f3-43ac0579ed12" alt="Image 4"></td>
+      <td><img src="https://github.com/user-attachments/assets/de11f0b6-5c14-4876-a4ef-6f682aae1d03" alt="Image 5"></td>
+      <td><img src="https://github.com/user-attachments/assets/c16bc6aa-2665-4ff9-a2b5-0cc3d1ec37d5" alt="Image 6"></td>
+    </tr>
+    <tr>
+      <td><p>Clase 3:Lowland Paca</p></td>
+      <td><p>Clase 4:Rodents</p></td>
+      <td><p>Clase 5:Great Tinamou</p></td>
+    </tr>
+  </table>
+</div>
 
 ###  Classification of Species
 Once the frames have been obtained, the classifier is trained:
