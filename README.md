@@ -247,3 +247,8 @@ Access http://localhost:6006 to view:
 - Performance metrics by species
 - Visualizations of confusion matrices
 - ROC curves for performance evaluation
+
+## Agradecimientos
+
+This project would not have been possible without the valuable collaboration of the Jocotoco Foundation, which provided legal access to the data. Their commitment to biodiversity conservation has been fundamental to the completion of this work.
+
